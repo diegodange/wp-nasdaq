@@ -17,11 +17,14 @@ class Suno_Shortcodes{
     }
    
     function Card_Ativo() {
-        $dados = Suno_API::GetCompanies();
+        $companies = Suno_API::GetCompanies();
+        $company_single = Suno_API::GetCompanyInfos();
 
-        for ($i=0; $i < count($dados->data->table->rows) ; $i++) { 
-            echo $dados->data->table->rows[$i]->symbol.' - '.$dados->data->table->rows[$i]->name.'</br>';
+        for ($i=0; $i < count($companies->data->table->rows) ; $i++) { 
+            // echo $companies->data->table->rows[$i]->symbol.' - '.$companies->data->table->rows[$i]->name.'</br>';
         }
+
+        echo $company_single->data->symbol.' - '.$company_single->data->companyName.'</br>';
         
     }
 
