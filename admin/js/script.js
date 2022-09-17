@@ -1,5 +1,5 @@
 jQuery(document).ready(function(){
-
-    // alert('NASDAQ');
-   
+    jQuery('.escolher-ativo').select2(
+        { maximumSelectionLength: 1 }
+    );
 });

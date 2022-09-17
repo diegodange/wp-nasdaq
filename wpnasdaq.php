@@ -24,21 +24,52 @@ function suno_plugin_wpnasdaq() {
     // INCLUDES 
     include 'includes/class-wp-suno-dashboard.php';
     include 'includes/class-wp-suno-api.php';
-    include 'includes/class-wp-suno-shortcodes.php';
+    include 'includes/class-wp-suno-functions.php';
     // INCLUDES
 
     add_action('wp_enqueue_scripts', 'suno_scripts');
-
+    add_action('admin_enqueue_scripts', 'suno_admin_scripts');
 }
 
 function suno_menu(){ 
-  add_menu_page('Wordpress Nasdaq', 'WP Nasdaq', 'manage_options', 'configuracoes', 'Dashboard::layout', 'dashicons-chart-area', 10);
+    add_menu_page('Wordpress Nasdaq', 'WP Nasdaq', 'manage_options', 'configurar-ativo', 'Dashboard::layout', 'dashicons-chart-area', 10);
 }
 
+function suno_admin_scripts(){
+    // SELECT 2
+    wp_enqueue_script( 'Select2_4.0.3_JS', plugin_dir_url(__FILE__).'admin/js/select2.min.js', array('jquery') );
+    wp_enqueue_style( 'Select2_4.0.3_CSS', plugin_dir_url(__FILE__).'admin/css/select2.min.css' );
+    // SELECT 2
+
+    // SCRIPT JS
+    wp_enqueue_script('Script_JS', plugin_dir_url(__FILE__).'admin/js/script.js', array('jquery'), '2.0.0', true);
+    // SCRIPT JS
+
+    // STYLE CSS
+    wp_enqueue_style( 'Dashboard_CSS', plugin_dir_url(__FILE__).'admin/css/dashboard.css');
+    // STYLE CSS
+}
 
 function suno_scripts(){
-  wp_enqueue_script('Script_JS', plugin_dir_url(__FILE__) . 'admin/js/script.js', array('jquery'), '2.0.0', true);
+
+    // STYLE CSS
+    wp_enqueue_style( 'Style_CSS', plugin_dir_url(__FILE__).'admin/css/style.css');
+    // STYLE CSS
+
+    // BOOTSTRAP 5 JS 
+    wp_enqueue_script( 'Bootstrap_Min_JS', plugin_dir_url(__FILE__).'admin/js/bootstrap.min.js', array ( 'jquery' ));
+    // BOOTSTRAP 5 JS 
+
+    // BOOTSTRAP 5 CSS 
+    wp_enqueue_style( 'Bootstrap_Min_CSS', plugin_dir_url(__FILE__).'admin/css/bootstrap.min.css');
+    wp_enqueue_style( 'Bootstrap_CSS', plugin_dir_url(__FILE__).'admin/css/bootstrap.css');
+    wp_enqueue_style( 'Bootstrap_CSS_Icons', plugin_dir_url(__FILE__).'admin/css/bootstrap-icons.css');         
+    // BOOTSTRAP 5 CSS 
+
+
+
 }
+
 
 function suno_activation(){}
 

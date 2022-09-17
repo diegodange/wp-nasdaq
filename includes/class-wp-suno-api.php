@@ -16,7 +16,7 @@ class Suno_API {
     private function __construct() { }
 
     public static function GetCompanies(){
-        $url = 'https://api.nasdaq.com/api/screener/stocks?tableonly=true&limit=20';
+        $url = 'https://api.nasdaq.com/api/screener/stocks?tableonly=true&limit=1000';
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -34,7 +34,7 @@ class Suno_API {
     }
 
     public static function GetCompanyInfos(){
-        $url = 'https://api.nasdaq.com/api/quote/NVDA/info?assetclass=stocks';
+        $url = 'https://api.nasdaq.com/api/quote/AAPL/info?assetclass=stocks';
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);

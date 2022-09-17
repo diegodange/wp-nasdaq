@@ -17,14 +17,29 @@ class Dashboard{
     }
 
     public static function layout(){
-        $html = <<<HTML
-        <div class="wrap">
-            <h1>Configurações</h1>
-            <p class="text-content"> Insira abaixo as opções para configurar os Ativos.</p>
-        </div>
-        HTML;
+        
+        $companies = Suno_API::GetCompanies();
 
-        echo $html;
+        ?>
+        <div class="wrap ativos-content">
+            <div class="ativos-list-content"> 
+                <h1>Configurar Ativo</h1>
+                <p class="text-content"> Insira abaixo o <b> ATIVO </b> para Visualização no <b>CARD</b> e salve.</p>
+                <select class="escolher-ativo" name="ativos[]" multiple="multiple">
+                <?php
+                    for ($i=0; $i < count($companies->data->table->rows) ; $i++) { 
+                        echo '<option class="pb-3">'.$companies->data->table->rows[$i]->name.' - '.$companies->data->table->rows[$i]->symbol.'</option>';
+                    }
+                ?>
+                </select>
+            </div>
+        </div>
+        <?php
+
+
+
+
+
     }
 
 
