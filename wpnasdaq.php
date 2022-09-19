@@ -39,6 +39,7 @@ function suno_admin_scripts(){
     // SELECT 2
     wp_enqueue_script( 'Select2_4.0.3_JS', plugin_dir_url(__FILE__).'admin/js/select2.min.js', array('jquery') );
     wp_enqueue_style( 'Select2_4.0.3_CSS', plugin_dir_url(__FILE__).'admin/css/select2.min.css' );
+    wp_enqueue_script( 'Select2_4.0.3_pt-BR_JS', plugin_dir_url(__FILE__).'admin/js/pt-BR.js', array('jquery') );
     // SELECT 2
 
     // SCRIPT JS

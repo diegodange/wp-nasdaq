@@ -44,9 +44,10 @@ class Dashboard{
                     <?php
                         for ($i=0; $i < count($companies->data->table->rows) ; $i++) { 
                             $option_value = $companies->data->table->rows[$i]->symbol;
-                                echo '<option class="pb-3" value="'.$option_value.'">'.$companies->data->table->rows[$i]->name.' - '.$companies->data->table->rows[$i]->symbol.'</option>';
                             if ($ativo[0] == $option_value) {
                                 echo '<option selected="selected" class="pb-3" value="'.$option_value.'">'.$companies->data->table->rows[$i]->name.' - '.$companies->data->table->rows[$i]->symbol.'</option>';
+                            } else {
+                                echo '<option class="pb-3" value="'.$option_value.'">'.$companies->data->table->rows[$i]->name.' - '.$companies->data->table->rows[$i]->symbol.'</option>';
                             }
                         }
                     ?>
