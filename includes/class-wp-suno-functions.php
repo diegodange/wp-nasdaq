@@ -17,10 +17,19 @@ class Suno_Functions{
     }
    
     function Card_Ativo() {
+        
+        // INFORMAÇÕES DO ATIVO
         $company_single = Suno_API::GetCompanyInfos();
+        // INFORMAÇÕES DO ATIVO
+        
+        // ÚLTIMO PREÇO
         $lastSalePrice = $company_single->data->primaryData->lastSalePrice;
+        // ÚLTIMO PREÇO
+        
         $netChange = $company_single->data->primaryData->netChange;
+        
         $percentageChange = $company_single->data->primaryData->percentageChange;
+        
         $lastTradeTimestamp = $company_single->data->primaryData->lastTradeTimestamp;
 
         if ($percentageChange != '') {
