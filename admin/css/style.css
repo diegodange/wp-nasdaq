@@ -55,3 +55,41 @@ span.isNasdaq100Span {
   display: flex;
   align-items: center;
 }
+.company_prices {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  letter-spacing: -1px;
+}
+.lastSalePrice {
+  font-weight: 500;
+  color: #fff;
+  font-family: 'Yantramanav', sans-serif;
+  font-size: 1.9rem !important;
+}
+span.netChange {
+  font-weight: 500;
+  font-family: 'Yantramanav', sans-serif;
+  color: #d14f59;
+  font-size: 1.3rem;
+  padding-left: 15px;
+}
+span.percentageChange{
+  font-weight: 500;
+  font-family: 'Yantramanav', sans-serif;
+  color: #d14f59;
+  font-size: 1.3rem;
+  padding-left: 9px;
+}
+.company_timestamp {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff9;
+  font-family: 'Yantramanav', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.company_infos p {
+  margin: 0;
+}

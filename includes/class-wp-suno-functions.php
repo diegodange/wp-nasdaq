@@ -18,6 +18,18 @@ class Suno_Functions{
    
     function Card_Ativo() {
         $company_single = Suno_API::GetCompanyInfos();
+        $lastSalePrice = $company_single->data->primaryData->lastSalePrice;
+        $netChange = $company_single->data->primaryData->netChange;
+        $percentageChange = $company_single->data->primaryData->percentageChange;
+        $lastTradeTimestamp = $company_single->data->primaryData->lastTradeTimestamp;
+
+        if ($percentageChange != '') {
+            $percentageChange_Formated = '('.$company_single->data->primaryData->percentageChange.')';
+        }
+        
+        if ($percentageChange == '') {
+            $percentageChange_Formated = '';
+        }
 
         // NASDAQ LISTED 
         if ($company_single->data->isNasdaqListed === true) {
@@ -45,7 +57,13 @@ class Suno_Functions{
                     echo '</div>';
                     echo '<div class="company_infos">';
                         echo $listed.' '.$nasdaq_cem;
-                    echo '<div>';
+                    echo '</div>';
+                    echo '<div class="company_prices">';
+                        echo '<span class="lastSalePrice">'.$lastSalePrice.'</span> <span class="netChange">'.$netChange.'</span><span class="percentageChange">'.$percentageChange_Formated.'</span>';
+                    echo '</div>';
+                    echo '<div class="company_timestamp">';
+                        echo '<span class="lastTradeTimestamp">'.$lastTradeTimestamp.'</span>';
+                    echo '</div>';
                 echo '</div>';
             echo '</div>';
         echo '</div>';
