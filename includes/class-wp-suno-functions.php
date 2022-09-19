@@ -19,19 +19,33 @@ class Suno_Functions{
     function Card_Ativo() {
         $company_single = Suno_API::GetCompanyInfos();
 
+        // NASDAQ LISTED 
         if ($company_single->data->isNasdaqListed === true) {
            $listed = '<p class="isNasdaqListed"> Nasdaq <span class="isNasdaqListedSpan"> Listed </span> </p>';
         }
+        if ($company_single->data->isNasdaqListed != true) {
+            $listed = '';
+        }
+        // NASDAQ LISTED 
 
+        // NASDAQ 100
         if ($company_single->data->isNasdaq100 === true) {
             $nasdaq_cem = '<p class="isNasdaq100 ms-3"> Nasdaq <span class="isNasdaq100Span"> 100 </span> </p>';
         }
+        if ($company_single->data->isNasdaq100 != true) {
+            $nasdaq_cem = '';
+        }
+        // NASDAQ 100
 
         echo '<div class="container">';
             echo '<div class="row d-flex justify-content-center">';
                 echo '<div class="card_company col-6 p-5">';
-                    echo '<span class="company_title">'.$company_single->data->companyName.'</span><span class="company_symbol ps-2">('.$company_single->data->symbol.')</span>';
-                    echo $listed.' '.$nasdaq_cem;
+                    echo '<div class="container-title">';
+                        echo '<span class="company_title">'.$company_single->data->companyName.'</span><span class="company_symbol">('.$company_single->data->symbol.')</span>';
+                    echo '</div>';
+                    echo '<div class="company_infos">';
+                        echo $listed.' '.$nasdaq_cem;
+                    echo '<div>';
                 echo '</div>';
             echo '</div>';
         echo '</div>';

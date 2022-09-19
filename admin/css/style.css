@@ -7,6 +7,15 @@
   font-family: 'Yantramanav', sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: fit-content;
+  float: left;
+  padding-right: 8px;
 }
 .company_symbol {
   font-family: 'Yantramanav', sans-serif;
@@ -36,4 +45,13 @@ p.isNasdaq100 {
 span.isNasdaq100Span {
   font-weight: 200;
 }
-
+.company_infos {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container-title {
+  display: flex;
+  align-items: center;
+}

@@ -32,7 +32,7 @@ function suno_plugin_wpnasdaq() {
 }
 
 function suno_menu(){ 
-    add_menu_page('Wordpress Nasdaq', 'WP Nasdaq', 'manage_options', 'configurar-ativo', 'Dashboard::layout', 'dashicons-chart-area', 10);
+    add_menu_page('Wordpress Nasdaq', 'WP Nasdaq', 'manage_options', 'configurar-ativo', 'Dashboard::estrutura_form_ativo', 'dashicons-chart-area', 10);
 }
 
 function suno_admin_scripts(){

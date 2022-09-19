@@ -34,7 +34,8 @@ class Suno_API {
     }
 
     public static function GetCompanyInfos(){
-        $url = 'https://api.nasdaq.com/api/quote/AAPL/info?assetclass=stocks';
+        $ativo = get_option('select_ativo');
+        $url = 'https://api.nasdaq.com/api/quote/'.$ativo[0].'/info?assetclass=stocks';
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);
