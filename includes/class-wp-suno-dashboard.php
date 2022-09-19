@@ -30,7 +30,7 @@ class Dashboard{
     public static function ativo_registrar_opcoes(){
         register_setting("selecionar-opcoes-ativos", "select_ativo");
         add_settings_section("selecionar-opcoes-ativos", "", null, "ativos");
-        add_settings_field("select_ativo", "Insira o ATIVO para Visualização no <b>CARD</b> e salve.", __CLASS__ .'::ativo_select_option', "ativos", "selecionar-opcoes-ativos"); 
+        add_settings_field("select_ativo", "Escolha o ATIVO para Visualização no CARD", __CLASS__ .'::ativo_select_option', "ativos", "selecionar-opcoes-ativos"); 
     }
 
     public static function ativo_select_option(){
