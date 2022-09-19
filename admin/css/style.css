@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
 .card_company {
-  background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),linear-gradient(301deg,rgba(44,34,150,0),#7b2297),linear-gradient(rgba(0,82,154,0.95),rgba(0,82,154,0.95)),linear-gradient(121deg,rgba(109,180,62,0),#6db43e),linear-gradient(238deg,rgba(173,32,142,0),#ad208e),linear-gradient(42deg,rgba(0,190,213,0),rgba(0,190,213,0.85) 85%,rgba(0,190,213,0.87) 87%,#00bed5),linear-gradient(126deg,rgba(0,190,213,0),#00bed5),linear-gradient(#594099,#594099) !important;
+  background: rgb(81,33,109);
+  background: linear-gradient(90deg, rgba(81,33,109,1) 73%, rgba(49,65,124,1) 100%);
 }
 .company_title{
   color: #fff;

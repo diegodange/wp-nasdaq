@@ -51,7 +51,7 @@ class Suno_Functions{
 
         echo '<div class="container">';
             echo '<div class="row d-flex justify-content-center">';
-                echo '<div class="card_company col-6 p-5">';
+                echo '<div class="card_company col-8 p-5">';
                     echo '<div class="container-title">';
                         echo '<span class="company_title">'.$company_single->data->companyName.'</span><span class="company_symbol">('.$company_single->data->symbol.')</span>';
                     echo '</div>';
