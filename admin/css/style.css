@@ -94,3 +94,11 @@ span.percentageChange{
 .company_infos p {
   margin: 0;
 }
+@media only screen and (max-width : 1000px) {
+  .company_prices {
+    justify-content: flex-start;
+  }
+  .company_timestamp {
+    justify-content: flex-start;
+  }
+}
